@@ -24,3 +24,5 @@
 Вы нажимаете на кнопку «Обновить» — две зелёные стрелочки.
 После чего делается запрос на получение всех записей и происходит обновление списка — GET.
 
+<img width="900" alt="hex2rgb-screenshot-2" src="https://github.com/Mali-zi/crud/blob/master/img/crud-screenshot.PNG">
+
