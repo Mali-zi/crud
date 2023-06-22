@@ -1,7 +1,7 @@
 import { ButtonProps } from '../models/index';
 
 /** 
- * Компонент ButtonDelete отрисовывает кнопку для удаления часов
+ * Компонент ButtonDelete отрисовывает кнопку для удаления сообщения
  */
 export default function ButtonDelete({handleDelete}: ButtonProps): React.ReactElement {
 

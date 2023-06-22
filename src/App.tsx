@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { IPost } from './models/index';
 import CreatePosts from './components/CreatePosts';
 import InputForm from './components/InputForm';
-import ButtonUpdata from './components/ButtonUpdate';
+import ButtonUpdate from './components/ButtonUpdate';
+import axios from 'axios';
 
 function App() {
   const [massage, setMassage] = useState('');
@@ -11,21 +12,27 @@ function App() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     if (massage) {
-      let nextList = [
-          ...posts,
-          {
-            id: Math.floor(Math.random() * 100) + 1,
-            text: massage,
-          }
-        ];
+      axios.post(`https://64945f8a0da866a95367a781.mockapi.io/posts`, {
+        massage,
+      });
       event.preventDefault();
       setMassage('');
-      setPosts(nextList);
-  }};
+    }
+  };
 
   function handleUpdate() {
-
+    axios.get(`https://64945f8a0da866a95367a781.mockapi.io/posts`)
+        .then((response) => {
+          setPosts(response.data);
+        })
   };
+
+  useEffect(() => {
+    axios.get(`https://64945f8a0da866a95367a781.mockapi.io/posts`)
+        .then((response) => {
+          setPosts(response.data);
+        })
+  }, []);
 
   return (
     <div className="App">
@@ -33,23 +40,19 @@ function App() {
         <div>
           <header className='header'>
             <h1>Notes</h1>
-            <ButtonUpdata 
+            <ButtonUpdate 
               handleUpdate={handleUpdate}
             />
           </header>
-            <div className="flex-large">
-              <CreatePosts 
-                posts={posts}
-                setPosts={setPosts}
-              />
-            </div>
-            <div className="flex-large">
-              <InputForm 
-                massage={massage}
-                setMassage={setMassage}
-                handleSubmit={handleSubmit}
-              />
-            </div>
+          <CreatePosts 
+            posts={posts}
+            setPosts={setPosts}
+          />
+          <InputForm 
+            massage={massage}
+            setMassage={setMassage}
+            handleSubmit={handleSubmit}
+          />
         </div>
       </div>
     </div>

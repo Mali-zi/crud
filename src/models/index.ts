@@ -1,6 +1,6 @@
 export interface IPost {
   id: number,
-  text: string, 
+  massage: string, 
 }
 
 export interface IProps1 {
@@ -18,6 +18,5 @@ export interface ButtonProps {
   handleDelete?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   handleSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   handleUpdate?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  id?: number;
 }
 

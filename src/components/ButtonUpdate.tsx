@@ -1,9 +1,9 @@
 import { ButtonProps } from '../models/index';
 
 /** 
- * Компонент ButtonDelete отрисовывает кнопку для удаления часов
+ * Компонент ButtonUpdate отрисовывает кнопку для обновления экрана пользователя
  */
-export default function ButtonUpdata({handleUpdate}: ButtonProps): React.ReactElement {
+export default function ButtonUpdate({handleUpdate}: ButtonProps): React.ReactElement {
 
   return (
     <button

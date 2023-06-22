@@ -1,5 +1,5 @@
 /** 
- * Компонент ButtonDelete отрисовывает кнопку для удаления часов
+ * Компонент ButtonSend отрисовывает кнопку для отправки сообщения на сервер
  */
 export default function ButtonSend(): React.ReactElement {
 
