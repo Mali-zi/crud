@@ -24,6 +24,23 @@ body {
   align-items: center;
 }
 
+.header {
+  position: relative;
+  width: 200px;
+  height: 60px;
+}
+
+.update {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+
 label {
   display: block;
   margin-right: 10px;
@@ -84,11 +101,15 @@ label {
   height: 3rem;
 }
 
+.iconUpdate {
+  height: 4rem;
+}
+
 .mainList {
   position: relative;
   transition: 0.4s;
   min-height: 1.5rem;
-  margin: 1rem 2rem;
+  margin: 0 2rem 2rem 0;
 }
 
 .textPlace {
@@ -112,9 +133,9 @@ label {
 
 .mylist {
   display: flex;
+  flex-wrap: wrap;
   width: 900px;
   padding: 0;
-  margin: 5px 20px;
   list-style: none;
-  justify-content: center;
+  justify-content: flex-start;
 }

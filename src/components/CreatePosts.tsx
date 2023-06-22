@@ -17,12 +17,14 @@ export default function CreatePosts({posts, setPosts}: IProps2): React.ReactElem
           className="mainList"
         >
             <ButtonDelete handleDelete={() => {
+              let answer = window.confirm('Are you sure?');
+              if (answer) {
                 setPosts(
                   posts.filter(a =>
                     a.id !== post.id
                   )
                 );
-              }}
+            }}}
             />
           <div className='textPlace'>
             {post.text}

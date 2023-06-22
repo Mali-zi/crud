@@ -3,6 +3,7 @@ import './App.css';
 import { IPost } from './models/index';
 import CreatePosts from './components/CreatePosts';
 import InputForm from './components/InputForm';
+import ButtonUpdata from './components/ButtonUpdate';
 
 function App() {
   const [massage, setMassage] = useState('');
@@ -22,13 +23,21 @@ function App() {
       setPosts(nextList);
   }};
 
+  function handleUpdate() {
+
+  };
+
   return (
     <div className="App">
       <div className="container">
         <div>
-          <h1>Notes</h1>
+          <header className='header'>
+            <h1>Notes</h1>
+            <ButtonUpdata 
+              // onClick={handleUpdate}
+            />
+          </header>
             <div className="flex-large">
-              <h2>Posts</h2>
               <CreatePosts 
                 posts={posts}
                 setPosts={setPosts}

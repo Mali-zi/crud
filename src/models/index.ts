@@ -17,6 +17,7 @@ export interface IProps2 {
 export interface ButtonProps {
   handleDelete?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   handleSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleUpdate?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export interface IProps3 {
