@@ -18,9 +18,6 @@ export interface ButtonProps {
   handleDelete?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   handleSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   handleUpdate?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  id?: number;
 }
 
-export interface IProps3 {
-  time: Date;
-  timeZone: number, 
-}

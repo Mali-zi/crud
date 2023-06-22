@@ -34,7 +34,7 @@ function App() {
           <header className='header'>
             <h1>Notes</h1>
             <ButtonUpdata 
-              // onClick={handleUpdate}
+              handleUpdate={handleUpdate}
             />
           </header>
             <div className="flex-large">

@@ -7,6 +7,16 @@ import { IProps2 } from '../models/index';
  * переменную состояния time.
  */
 export default function CreatePosts({posts, setPosts}: IProps2): React.ReactElement{
+  function handleDelete(id: number): void {
+    let answer = window.confirm('Are you sure?');
+    if (answer) {
+      setPosts(
+        posts.filter(a =>
+          a.id !== id
+        )
+      );
+    }
+  };
 
   let postsList: JSX.Element[] = [<></>];
   if (posts) {
@@ -16,15 +26,8 @@ export default function CreatePosts({posts, setPosts}: IProps2): React.ReactElem
           key={post.id}
           className="mainList"
         >
-            <ButtonDelete handleDelete={() => {
-              let answer = window.confirm('Are you sure?');
-              if (answer) {
-                setPosts(
-                  posts.filter(a =>
-                    a.id !== post.id
-                  )
-                );
-            }}}
+            <ButtonDelete 
+              handleDelete={() => handleDelete(post.id)}
             />
           <div className='textPlace'>
             {post.text}
